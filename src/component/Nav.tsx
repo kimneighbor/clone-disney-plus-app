@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 
 interface NavWrapperProps {
-    show: boolean;
+    $show: boolean;
 }
 
 const Nav = () => {
@@ -24,7 +24,7 @@ const Nav = () => {
 
 
     return (
-        <NavWrapper show={show}>
+        <NavWrapper $show={show}>
             <Logo>
                 <img
                     alt="Disney Plus Logo"
@@ -44,7 +44,7 @@ const NavWrapper = styled.nav<NavWrapperProps>`
   left: 0;
   right: 0;
   height: 70px;
-  background-color: ${props => props.show ? "#090b13":"transparent"};
+  background-color: ${props => (props.$show ? "#090b13":"transparent")};
   display: flex;
   justify-content: space-between;
   align-items: center;
