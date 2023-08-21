@@ -2,11 +2,13 @@ import React from 'react';
 import './App.css';
 import Nav from "./component/Nav";
 import styled from "styled-components";
+import Banner from "./component/Banner";
 
 function App() {
     return (
         <Container>
             <Nav/>
+            <Banner/>
         </Container>
     );
 }
@@ -26,7 +28,7 @@ const Container = styled.main`
     background: url("/images/home-background.png") center center / cover no-repeat fixed;
     content: "";
     position: absolute;
-    inset: 0px;
+    inset: 0;
     opacity: 1;
     z-index: -1;
 
