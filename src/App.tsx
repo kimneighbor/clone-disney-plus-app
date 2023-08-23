@@ -4,13 +4,22 @@ import Nav from "./component/Nav";
 import styled from "styled-components";
 import Banner from "./component/Banner";
 import Category from "./component/Category";
+import Row from "./component/Row";
+import requests from "./api/request";
+
+
 
 function App() {
     return (
         <Container>
             <Nav/>
             <Banner/>
-        <Category></Category>
+            <Category/>
+            <Row title="Trending Now" id="TN" fetchUrl={requests.fetchTrending}/>
+            <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRated}/>
+            <Row title="Action Movies" id="AM" fetchUrl={requests.fetchActionMovies}/>
+            <Row title="Comedy Movies" id="CM" fetchUrl={requests.fetchComedyMovies}/>
+
         </Container>
     );
 }

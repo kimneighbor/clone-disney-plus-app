@@ -4,8 +4,11 @@ import requests from "../api/request";
 import "./Banner.css";
 import styled from "styled-components";
 
-interface Movie {
+//export Row.tsx 에서 사용
+export interface Movie {
     backdrop_path: string;
+    //Row.tsx 에서 id 사용
+    id: string;
     title?: string;
     name?: string;
     original_name?: string;
