@@ -1,7 +1,7 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import axios from "../api/axios";
 // Banner.tsx 로부터 임포트
-import {Movie} from "./Banner";
+import { Movie } from "./Banner";
 import "./Row.css";
 
 interface RowProps {
@@ -10,8 +10,9 @@ interface RowProps {
     fetchUrl: string;
 }
 
-const Row: React.FC<RowProps> = ({title, id, fetchUrl}) => {
+const Row = ({ title, id, fetchUrl }: RowProps) => {
     const [movies, setMovies] = useState<Movie[]>([])
+
     const fetchMovieData = useCallback(async () => {
         const response = await axios.get(fetchUrl);
         setMovies(response.data.results);
@@ -19,8 +20,7 @@ const Row: React.FC<RowProps> = ({title, id, fetchUrl}) => {
 
     useEffect(() => {
         fetchMovieData();
-    }, [fetchMovieData()]);
-
+    }, [fetchMovieData]);
 
     return (
         <div>
@@ -28,7 +28,7 @@ const Row: React.FC<RowProps> = ({title, id, fetchUrl}) => {
             <div className='slider'>
                 <div className='slider__arrow-left'>
                     <span className='arrow'>
-                            {"<"}
+                        {"<"}
                     </span>
                 </div>
 
@@ -39,7 +39,6 @@ const Row: React.FC<RowProps> = ({title, id, fetchUrl}) => {
                             className="row__poster"
                             src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                             alt={movie.name}
-
                         />
                     ))}
                 </div>
@@ -47,11 +46,10 @@ const Row: React.FC<RowProps> = ({title, id, fetchUrl}) => {
                     <span className='arrow'>
                         {">"}
                     </span>
-
                 </div>
             </div>
         </div>
     );
 };
 
-export default Row
+export default Row;
