@@ -70,6 +70,8 @@ const Banner = () => {
                     }")`,
                     backgroundPosition: " top center",
                     backgroundSize: " cover",
+
+                    // 오류 수정 코드
                     // backgroundImage: movie?.backdrop_path
                     //     ? `url(" https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`
                     //     : "",
