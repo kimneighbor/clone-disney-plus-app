@@ -4,10 +4,35 @@ import styled from "styled-components";
 const Category = () => {
     return (
         <Container>
+
             <Wrap>
                 <img src="/images/viewers-disney.png" alt="disney"/>
                 <video autoPlay loop muted>
                     <source src="/videos/disney.mp4" type='video/mp4'/>
+                </video>
+            </Wrap>
+            <Wrap>
+                <img src="/images/viewers-marvel.png" alt="marvel"/>
+                <video autoPlay loop muted>
+                    <source src="/videos/marvel.mp4" type='video/mp4'/>
+                </video>
+            </Wrap>
+            <Wrap>
+                <img src="/images/viewers-national.png" alt="naitional"/>
+                <video autoPlay loop muted>
+                    <source src="/videos/national-geographic.mp4" type='video/mp4'/>
+                </video>
+            </Wrap>
+            <Wrap>
+                <img src="/images/viewers-pixar.png" alt="pixar"/>
+                <video autoPlay loop muted>
+                    <source src="/videos/pixar.mp4" type='video/mp4'/>
+                </video>
+            </Wrap>
+            <Wrap>
+                <img src="/images/viewers-starwars.png" alt="starwars"/>
+                <video autoPlay loop muted>
+                    <source src="/videos/star-wars.mp4" type='video/mp4'/>
                 </video>
             </Wrap>
 
@@ -70,6 +95,7 @@ const Wrap = styled.div`
     transform: scale(1.05);
     border-color: rgba(249, 249, 249, 0.8);
     video {
+      transform: scale(1.05);
       opacity: 1;
     }
     
