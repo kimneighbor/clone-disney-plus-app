@@ -18,6 +18,7 @@ const Row = ({ title, id, fetchUrl }: RowProps) => {
         setMovies(response.data.results);
     }, [fetchUrl]);
 
+
     useEffect(() => {
         fetchMovieData();
     }, [fetchMovieData]);
@@ -43,7 +44,15 @@ const Row = ({ title, id, fetchUrl }: RowProps) => {
                     ))}
                 </div>
                 <div className='slider__arrow-right'>
-                    <span className='arrow'>
+                    <span
+                        className='arrow'
+                        onClick={() => {
+                            const element = document.getElementById(id);
+                            if (element) {
+                                element.scrollLeft += window.innerWidth - 80;
+                            }
+                        }}
+                    >
                         {">"}
                     </span>
                 </div>
