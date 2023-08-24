@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import axios from "../api/axios";
 // Banner.tsx 로부터 임포트
-import { Movie } from "./Banner";
+import {Movie} from "./Banner";
 import "./Row.css";
+import MovieModal from "./MovieModal";
 
 interface RowProps {
     title: string;
@@ -10,8 +11,9 @@ interface RowProps {
     fetchUrl: string;
 }
 
-const Row = ({ title, id, fetchUrl }: RowProps) => {
+const Row = ({title, id, fetchUrl}: RowProps) => {
     const [movies, setMovies] = useState<Movie[]>([])
+    const [modalOpen, setModalOpen] = useState(false);
 
     const fetchMovieData = useCallback(async () => {
         const response = await axios.get(fetchUrl);
@@ -22,6 +24,10 @@ const Row = ({ title, id, fetchUrl }: RowProps) => {
     useEffect(() => {
         fetchMovieData();
     }, [fetchMovieData]);
+
+    const handleClick = (movie: Movie) => {
+        setModalOpen(true);
+    }
 
     return (
         <div>
@@ -47,6 +53,7 @@ const Row = ({ title, id, fetchUrl }: RowProps) => {
                             className="row__poster"
                             src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                             alt={movie.name}
+                            onClick={() => handleClick(movie)}
                         />
                     ))}
                 </div>
@@ -64,6 +71,11 @@ const Row = ({ title, id, fetchUrl }: RowProps) => {
                     </span>
                 </div>
             </div>
+
+            {setModalOpen &&
+                <MovieModal/>
+
+            }
         </div>
     );
 };
