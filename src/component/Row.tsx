@@ -28,7 +28,14 @@ const Row = ({ title, id, fetchUrl }: RowProps) => {
             <h2>{title}</h2>
             <div className='slider'>
                 <div className='slider__arrow-left'>
-                    <span className='arrow'>
+                    <span className='arrow'
+                          onClick={() => {
+                              const element = document.getElementById(id);
+                              if (element) {
+                                  element.scrollLeft -= window.innerWidth - 80;
+                              }
+                          }}
+                    >
                         {"<"}
                     </span>
                 </div>
