@@ -14,6 +14,8 @@ interface RowProps {
 const Row = ({title, id, fetchUrl}: RowProps) => {
     const [movies, setMovies] = useState<Movie[]>([])
     const [modalOpen, setModalOpen] = useState(false);
+    const [movieSelected, setMovieSelection] = useState({})
+
 
     const fetchMovieData = useCallback(async () => {
         const response = await axios.get(fetchUrl);
@@ -27,6 +29,7 @@ const Row = ({title, id, fetchUrl}: RowProps) => {
 
     const handleClick = (movie: Movie) => {
         setModalOpen(true);
+        setMovieSelection(movie);
     }
 
     return (
@@ -73,7 +76,10 @@ const Row = ({title, id, fetchUrl}: RowProps) => {
             </div>
 
             {setModalOpen &&
-                <MovieModal/>
+                <MovieModal
+                    {...movieSelected}
+                    setModalOpen={setModalOpen}
+                />
 
             }
         </div>
