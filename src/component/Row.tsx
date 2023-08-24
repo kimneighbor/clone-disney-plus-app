@@ -50,7 +50,7 @@ const Row = ({title, id, fetchUrl}: RowProps) => {
                     </span>
                 </div>
 
-                <div id={id} className={"row__posters"}>
+                <div id={id} className="row__posters">
                     {movies.map(movie => (
                         <img
                             key={movie.id}
