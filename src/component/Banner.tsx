@@ -13,6 +13,10 @@ export interface Movie {
     name?: string;
     original_name?: string;
     overview: string;
+    release_date?: string;
+    first_air_date?: string;
+    vote_average: number;
+    setModalOpen?: any;
     videos?: {
         results: {
             key: string;
