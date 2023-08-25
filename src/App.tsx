@@ -8,7 +8,6 @@ import Row from "./component/Row";
 import requests from "./api/request";
 
 
-
 function App() {
     return (
         <Container>
