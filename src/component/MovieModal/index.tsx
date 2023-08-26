@@ -1,10 +1,16 @@
 import React, {useRef} from 'react';
 import "./MovieModal.css";
 import {Movie} from "../Banner";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
 
 const MovieModal = (movie: Movie) => {
 
     const ref = useRef<HTMLDivElement | null>(null);
+    // console.log('ref', ref.current);
+
+    useOnClickOutside(ref, ()=>{
+        movie.setModalOpen(false);
+    })
     return (
         <div className='presentation' role="presentation">
             <div className='wrapper-modal'>
