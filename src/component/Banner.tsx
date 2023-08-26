@@ -6,7 +6,8 @@ import styled from "styled-components";
 
 //export Row.tsx 에서 사용
 export interface Movie {
-    backdrop_path: string;
+    backdrop_path: string | null;
+    media_type: string;
     //Row.tsx 에서 id 사용
     id: string;
     title?: string;
