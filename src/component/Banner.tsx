@@ -9,6 +9,7 @@ export interface Movie {
     backdrop_path: string | null;
     media_type: string;
     //Row.tsx 에서 id 사용
+    fetchUrl: string;
     id: string;
     title?: string;
     name?: string;
