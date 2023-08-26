@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import styled from "styled-components";
 import {useLocation, useNavigate} from "react-router-dom";
 
@@ -32,7 +32,7 @@ const Nav = () => {
         }
     }
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value);
         navigate(`/search?q=${e.target.value}`);
     };

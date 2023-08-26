@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import "./MovieModal.css";
 import {Movie} from "../Banner";
 
 const MovieModal = (movie: Movie) => {
+
+    const ref = useRef<HTMLDivElement | null>(null);
     return (
         <div className='presentation' role="presentation">
             <div className='wrapper-modal'>
-                <div className='modal'>
+                <div className='modal' ref={ref}>
                 <span
                     onClick={() => movie.setModalOpen(false)}
                     className='modal-close'
