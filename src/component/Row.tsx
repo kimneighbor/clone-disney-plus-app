@@ -36,45 +36,15 @@ const Row = ({title, id, fetchUrl}: RowProps) => {
     return (
         <div>
             <h2>{title}</h2>
-            <div className='slider'>
-                <div className='slider__arrow-left'>
-                    <span className='arrow'
-                          onClick={() => {
-                              const element = document.getElementById(id);
-                              if (element) {
-                                  element.scrollLeft -= window.innerWidth - 80;
-                              }
-                          }}
-                    >
-                        {"<"}
-                    </span>
-                </div>
-
-                <div id={id} className="row__posters">
-                    {movies.map(movie => (
-                        <img
-                            key={movie.id}
-                            className="row__poster"
-                            src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                            alt={movie.name}
-                            onClick={() => handleClick(movie)}
-                        />
-                    ))}
-                </div>
-                <div className='slider__arrow-right'>
-                    <span
-                        className='arrow'
-                        onClick={() => {
-                            const element = document.getElementById(id);
-                            if (element) {
-                                element.scrollLeft += window.innerWidth - 80;
-                            }
-                        }}
-                    >
-                        {">"}
-                    </span>
-                </div>
-            </div>
+            {movies.map(movie => (
+                <img
+                    key={movie.id}
+                    className="row__poster"
+                    src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                    alt={movie.name}
+                    onClick={() => handleClick(movie)}
+                />
+            ))}
 
             {modalOpen && movieSelected && (
                 <MovieModal
