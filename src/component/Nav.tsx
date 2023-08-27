@@ -49,7 +49,7 @@ const Nav = () => {
                 />
             </Logo>
 
-            {pathname === "/" ? (<Login>Login</Login>) :
+            {pathname === "/" ? (<Login>로그인</Login>) :
                 <Input
                     value={searchValue}
                     onChange={handleChange}
@@ -70,11 +70,13 @@ const Login = styled.a`
   text-transform: uppercase;
   letter-spacing: 1.5px;
   border: 1px solid #f9f9f9;
+  border-radius: 5px;
   transition: all 0.2s ease 0s;
 
   &:hover {
     background-color: #f9f9f9;
-    color: gray;
+    font-weight:bold;
+    color: black;
     border-color: transparent;
   }
 `;
@@ -112,6 +114,7 @@ const Logo = styled.a`
   max-height: 70px;
   font-size: 0;
   display: inline-block;
+  cursor: pointer;
 
   img {
     display: block;

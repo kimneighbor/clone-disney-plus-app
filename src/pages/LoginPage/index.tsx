@@ -6,15 +6,18 @@ const LoginPage = () => {
         <Container>
             <Content>
                 <Center>
-                    <LogoOne src="/images/cta-logo-one.svg" alt="logo-one" />
-                    <SignUpLink>미리보기</SignUpLink>
+                    <LogoOne src="/images/cta-logo-one.svg" alt="logo-one"/>
+                    <SignUpLink
+                        onClick={() => window.location.href = "/main"}
+                    >미리보기
+                    </SignUpLink>
                     <Description>
-                        영화에 대한 프리미어 액세스를 얻으십시오.
-                        디즈니 플러스 가격은 다음 주부터 1000원 인상됩니다.
+
+                        미리보기를 누르면 메인페이지로 이동합니다.
                     </Description>
-                    <LogoTwo src="images/cta-logo-two.png" alt="logo-two" />
+                    <LogoTwo src="images/cta-logo-two.png" alt="logo-two"/>
                 </Center>
-                <BgImage />
+                <BgImage/>
             </Content>
         </Container>
     )
@@ -36,11 +39,11 @@ const BgImage = styled.div`
 `;
 
 const Container = styled.section`
-   overflow: hidden;
-   display: flex;
-   flex-direction: column;
-   text-align: center;
-   height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
 `;
 
 const Content = styled.div`
@@ -83,6 +86,7 @@ const SignUpLink = styled.a`
   padding: 16.5px 0;
   border: 1px solid transparent;
   border-radius: 4px;
+  cursor: pointer;
 
   &:hover {
     background-color: #0483ee;
