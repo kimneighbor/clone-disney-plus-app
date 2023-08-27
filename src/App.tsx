@@ -1,11 +1,6 @@
 import React from 'react';
 import './App.css';
 import Nav from "./component/Nav";
-import styled from "styled-components";
-import Banner from "./component/Banner";
-import Category from "./component/Category";
-import Row from "./component/Row";
-import requests from "./api/request";
 import {Outlet, Route, Routes} from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
